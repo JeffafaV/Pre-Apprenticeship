@@ -1,0 +1,10 @@
+db.inventory.updateOne({item: "Journal"}, {$set: {"size.h": 16}});
+db.inventory.updateMany({status: "D"}, {$set: {quantity : 50}}, {upsert: true});
+db.inventory.updateOne({item: "paper"}, {$set: {rating: "4 stars", status: "A"}}, {upsert: true});
+db.inventory.updateMany({}, {$rename: {"size.h": "size.height", "size.w": "size.width"}});
+db.inventory.updateOne({item: "spiral notebook"}, {$inc: {"size.height": 2, "size.width": 2}});
+db.inventory.updateOne({item: "paper"}, {$mul: {"size.height": 3}});
+db.inventory.updateOne({item: "day planner"}, {$mul: {"size.height": 3}});
+db.inventory.updateMany({}, {$set: {rating: {numberOfStars: 4, hasBeenRated: false}}}, {upsert: true});
+db.inventory.updateMany({}, {$mul: {quantity: 2}});
+db.inventory.updateMany({"size.uom": "cm"}, {$set: {status : "B"}}, {upsert: true});

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Task3 Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+	<style>
+		.odd {background-color: beige}
+		.even {background-color: silver}
+	</style>
+	<h1>Task3 <span th:text="${MyCustomName}">World!</span></h1>
+	<p>This page is the root view served when visiting <a href="/">localhost:8080/</a></p>
+	
+	<p>it contains a model with an extra attribute called other containing '<span th:text="${other}">default text</span>' and this is more text in the first paragraph</p>
+	<p>this is a second paragraph with an attribute called another containing '<span th:text="${another}">default alternate text</span>' and it too has more text in the second paragraph</p>
+	
+	<table>
+		<thead>
+			<th>Number</th>
+			<td>Name</td>
+			<td>Secret Identity</td>
+			<td>Vulnerability</td>
+		</thead>
+		<tbody>
+			<tr th:each="hero,rowdata : ${heroes.values}" th:class="${rowdata.odd}?'odd':'even'">
+				<td th:text="${rowdata.count} + ' of ' +${rowdata.size} + ' first:' + ${rowdata.first} + ' last:' + ${rowdata.last}">0</td>
+				<td th:text="${hero.name}">hero name</td>
+				<td th:text="${hero.secretIdentity}">hero identity</td>
+				<td th:text="${hero.vulnerability}">hero vulnerability</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

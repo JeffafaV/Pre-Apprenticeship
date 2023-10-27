@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Task2 Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+	<h1>Task2 <span th:text="${MyCustomName}">World!</span></h1>
+	<p>This page is the root view served when visiting <a href="/">localhost:8080/</a></p>
+	
+	<p>it contains a model with an extra attribute called other containing '<span th:text="${other}">default text</span>' and this is more text in the first paragraph</p>
+	<p>this is a second paragraph with an attribute called another containing '<span th:text="${another}">default alternate text</span>' and it too has more text in the second paragraph</p>
+	
+	<p>this paragraph is displaying information from the path pattern "/Task2/{data}" = '<span th:text="${Task1DataParameter}">default Task1 text</span>'</p>
+	<p>this paragraph is displaying information from the QueryString variable Q1 = '<span th:text="${Task2QueryParameter}">default Task2 text</span>'</p>
+</body>
+</html>

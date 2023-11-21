@@ -1,0 +1,26 @@
+<h3>Submit Message</h3>
+<form (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" placeholder="name" id="name" name="name" required [(ngModel)]="model.name">
+
+    </div>
+    <div>
+        <label for="email">Email: </label>
+        <input type="text" placeholder="email" id="email" name="email" required [(ngModel)]="model.email">
+        
+    </div>
+    <div>
+        <label for="subject">Subject: </label>
+        <input type="text" placeholder="subject" id="subject" name="subject" required [(ngModel)]="model.subject">
+        
+    </div>
+    <div>
+        <label for="message">Message: </label>
+        <textarea type="text" placeholder="message" id="message" name="message" required [(ngModel)]="model.message"></textarea>
+        
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>

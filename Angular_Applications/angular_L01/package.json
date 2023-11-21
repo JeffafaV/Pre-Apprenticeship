@@ -1,0 +1,11 @@
+{
+  "name": "typescript-sandbox",
+  "version": "1.0.0",
+  "description": "a sandbox for testing typecript code",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,26 @@
+<h3>Submit Message</h3>
+<form (ngSubmit)="formSubmit()">
+    <div>
+        <label for="id">ID: </label>
+        <input type="text" placeholder="id" id="id" name="id" required [(ngModel)]="model.id">
+
+    </div>
+    <div>
+        <label for="city">City: </label>
+        <input type="text" placeholder="city" id="city" name="city" required [(ngModel)]="model.city">
+        
+    </div>
+    <div>
+        <label for="country">Country: </label>
+        <input type="text" placeholder="country" id="country" name="country" required [(ngModel)]="model.country">
+        
+    </div>
+    <div>
+        <label for="description">Description: </label>
+        <textarea type="text" placeholder="description" id="description" name="description" required [(ngModel)]="model.description"></textarea>
+        
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>

@@ -1,9 +1,12 @@
-package com.Jeff.handson;
+// package com.Jeff.handson;
 
+// imporing scanner class from the java.util package
 import java.util.Scanner;
 
-public class HandsOn {
-
+// file name should be the same as the public class
+public class CalculateFare {
+	// main functiion is the entry point of the program
+	// it needs to have the public and static keywords
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);

@@ -5,21 +5,30 @@ import java.util.Scanner;
 
 // file name should be the same as the public class
 public class CalculateFare {
+	
 	// main functiion is the entry point of the program
 	// it needs to have the public and static keywords
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		// creating a scanner object to allow user input
 		Scanner sc = new Scanner(System.in);
+		// string to hold the user's choice
+		// currently it is set to yes
 		String userChoice = "yes";
 		
+		// checks to see if userChoice equals to yes
 		while (userChoice.equals("yes"))
 		{
+			// outputs prompt and takes user input for miles
 			System.out.print("Enter the # of miles to travel: ");
 			int miles = sc.nextInt();
 			
+			//outputs prompt and takes user input for userClass
 			System.out.print("Enter the class (1/2/3) of journey: ");
 			int userClass = sc.nextInt();
 			
+			// double used to hold the price of the fare
+			// will be set in switch statement
 			double price;
 			
 			switch (userClass)

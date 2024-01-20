@@ -19,11 +19,11 @@ public class CalculateFare {
 		// checks to see if userChoice equals to yes
 		while (userChoice.equals("yes"))
 		{
-			// outputs prompt and takes user input for miles
+			// outputs prompt to enter miles and takes user input for miles
 			System.out.print("Enter the # of miles to travel: ");
 			int miles = sc.nextInt();
 			
-			//outputs prompt and takes user input for userClass
+			//outputs prompt to enter class and takes user input for userClass
 			System.out.print("Enter the class (1/2/3) of journey: ");
 			int userClass = sc.nextInt();
 			
@@ -31,71 +31,88 @@ public class CalculateFare {
 			// will be set in switch statement
 			double price;
 			
+			// switch statement with userClass as the case
 			switch (userClass)
 			{
-			case 1:
-				if (miles <= 100)
-				{
-					price = miles * 3;
-				}
-				else if (miles <= 250)
-				{
-					price = 100 * 3 + (miles - 100) * 2.50;
-				}
-				else
-				{
-					price = 100 * 3 + 150 * 2.50 + (miles - 250) * 2;
-				}
-				
-				System.out.println("Total cost = $" + price);
-				
-				break;
-				
-			case 2:
-				if (miles <= 100)
-				{
-					price = miles * 2;
-				}
-				else if (miles <= 250)
-				{
-					price = 100 * 2 + (miles - 100) * 1.50;
-				}
-				else
-				{
-					price = 100 * 2 + 150 * 1.50 + (miles - 250) * 1;
-				}
-				
-				System.out.println("Total cost = $" + price);
-				
-				break;
-				
-			case 3:
-				if (miles <= 100)
-				{
-					price = miles * 1.50;
-				}
-				else if (miles <= 250)
-				{
-					price = 100 * 1.50 + (miles - 100) * 1;
-				}
-				else
-				{
-					price = 100 * 1.50 + 150 * 1 + (miles - 250) * 0.50;
-				}
-				
-				System.out.println("Total cost = $" + price);
-				
-				break;
-				
-			default:
-				System.out.println("Wrong class input. Try again.");
+				// userClass = 1
+				case 1:
+					// algorithm used depends on the number of miles
+					// and price will be calculated
+					if (miles <= 100)
+					{
+						price = miles * 3;
+					}
+					else if (miles <= 250)
+					{
+						price = 100 * 3 + (miles - 100) * 2.50;
+					}
+					else
+					{
+						price = 100 * 3 + 150 * 2.50 + (miles - 250) * 2;
+					}
+					
+					// outputs total cost using price
+					System.out.println("Total cost = $" + price);
+					
+					break;
+					
+				// userClass = 2
+				case 2:
+					// algorithm used depends on the number of miles
+					// and price will be calculated
+					if (miles <= 100)
+					{
+						price = miles * 2;
+					}
+					else if (miles <= 250)
+					{
+						price = 100 * 2 + (miles - 100) * 1.50;
+					}
+					else
+					{
+						price = 100 * 2 + 150 * 1.50 + (miles - 250) * 1;
+					}
+					
+					// outputs total cost using price
+					System.out.println("Total cost = $" + price);
+					
+					break;
+					
+				// userClass = 3
+				case 3:
+					// algorithm used depends on the number of miles
+					// and price will be calculated
+					if (miles <= 100)
+					{
+						price = miles * 1.50;
+					}
+					else if (miles <= 250)
+					{
+						price = 100 * 1.50 + (miles - 100) * 1;
+					}
+					else
+					{
+						price = 100 * 1.50 + 150 * 1 + (miles - 250) * 0.50;
+					}
+					
+					// outputs total cost using price
+					System.out.println("Total cost = $" + price);
+					
+					break;
+					
+				// userClass = invalid input
+				default:
+					// outputs prompt for wrong input
+					System.out.println("Wrong class input. Try again.");
 			}
 			
+			// outputs prompt and asks user if they want to use again
 			System.out.print("Do you want to calculate another fare (yes/no): ");
 			userChoice = sc.next();
 			userChoice = userChoice.toLowerCase();
 		}
 		
+		// terminating the scanner
 		sc.close();
 	}
 

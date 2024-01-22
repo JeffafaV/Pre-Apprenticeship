@@ -1,44 +1,64 @@
+// imporing scanner class from the java.util package
 import java.util.Scanner;
 
+// file name should be the same as the public class
 public class Conversions {
-
+	
+	// main functiion is the entry point of the program
+	// it needs to have the public and static keywords
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		// creating a scanner object to allow user input
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Currency labels and options:");
+		// displaying prompt and user options for conversion
+		System.out.println("Currency abbreviations and names:");
 		System.out.println("e = Euros");
 		System.out.println("c = Chinese Yuan");
 		System.out.println("r = Indian Rupees");
 		System.out.println("b = Bitcoin");
 		System.out.println();
-		System.out.print("Enter the currency you want to convert to USD: ");
+		System.out.print("Enter the currency's abbreviation you want to convert to USD: ");
 		
+		// taking char input from user for currency abbreviation
 		char currLabel = sc.next().charAt(0);
+		// string used to hold currency name 
 		String currency;
 		
+		// switch statement with currLabel as the case
 		switch (currLabel)
 		{
-		case 'e':
-			currency = "Euros";
-			break;
+			// setting currency variable to its respected name 
+			// depending on the value of currLabel
 			
-		case 'c':
-			currency = "Yuan";
-			break;
-			
-		case 'r':
-			currency = "Rupees";
-			break;
-			
-		case 'b':
-			currency = "Bitcoin";
-			break;
-			
-		default:
-			System.out.println("Invalid input. Try again.");
-			sc.close();
-			return;
+			// currLabel = 'e'
+			case 'e':
+				currency = "Euros";
+				break;
+				
+			// currLabel = 'c'
+			case 'c':
+				currency = "Yuan";
+				break;
+				
+			// currLabel = 'r'
+			case 'r':
+				currency = "Rupees";
+				break;
+				
+			// currLabel = 'b'
+			case 'b':
+				currency = "Bitcoin";
+				break;
+				
+			// currLabel = invalid input
+			default:
+				// displaying prompt for bad input
+				System.out.println("Invalid input. Try again.");
+				// terminating the scanner
+				sc.close();
+				// terminating the program
+				return;
 		}
 		
 		System.out.print("Enter amount of " + currency + ": ");

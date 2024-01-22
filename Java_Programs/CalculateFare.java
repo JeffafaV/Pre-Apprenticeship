@@ -1,5 +1,3 @@
-// package com.Jeff.handson;
-
 // imporing scanner class from the java.util package
 import java.util.Scanner;
 
@@ -17,6 +15,7 @@ public class CalculateFare {
 		String userChoice = "yes";
 		
 		// checks to see if userChoice equals to yes
+		// keeps looping until userChoice != yes
 		while (userChoice.equals("yes"))
 		{
 			// outputs prompt to enter miles and takes user input for miles
@@ -108,6 +107,8 @@ public class CalculateFare {
 			
 			// outputs prompt and asks user if they want to use again
 			System.out.print("Do you want to calculate another fare (yes/no): ");
+			
+			// takes user input and turns their input into lower case
 			userChoice = sc.next();
 			userChoice = userChoice.toLowerCase();
 		}

@@ -14,9 +14,9 @@ public class CalculateFare {
 		// currently it is set to yes
 		String userChoice = "yes";
 		
-		// checks to see if userChoice equals to yes
+		// checks to see if userChoice equals to yes or y
 		// keeps looping until userChoice != yes
-		while (userChoice.equals("yes"))
+		while (userChoice.equals("yes") || userChoice.equals("y"))
 		{
 			// outputs prompt to enter miles and takes user input for miles
 			System.out.print("Enter the # of miles to travel: ");
@@ -108,7 +108,7 @@ public class CalculateFare {
 			// outputs prompt and asks user if they want to use again
 			System.out.print("Do you want to calculate another fare (yes/no): ");
 			
-			// takes user input and turns their input into lower case
+			// takes user input for their choice and turns their input into lower case
 			userChoice = sc.next();
 			userChoice = userChoice.toLowerCase();
 		}

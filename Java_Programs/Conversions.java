@@ -11,6 +11,7 @@ public class Conversions {
 		// creating a scanner object to allow user input
 		Scanner sc = new Scanner(System.in);
 		
+		// this conversion is used to find the usd amount of a currency
 		// displaying prompt and user options for conversion
 		System.out.println("Currency abbreviations and names:");
 		System.out.println("e = Euros");
@@ -55,44 +56,62 @@ public class Conversions {
 			default:
 				// displaying prompt for bad input
 				System.out.println("Invalid input. Try again.");
+				
 				// terminating the scanner
 				sc.close();
 				// terminating the program
 				return;
 		}
 		
+		// displays prompt and asks the user for the amount of their chosen currency
 		System.out.print("Enter amount of " + currency + ": ");
 		int amount = sc.nextInt();
 		
+		// double used to hold the usd amount
 		double usd = 0;
 		
+		// switch statement with currLabel as the case
 		switch (currLabel)
 		{
-		case 'e':
-			usd = amount * 1.16;
-			break;
-			
-		case 'c':
-			usd = amount * 0.15;
-			break;
-			
-		case 'r':
-			usd = amount * 0.015;
-			break;
-			
-		case 'b':
-			usd = amount * 6923.80;
-			break;
+			// setting usd variable to its respected amount 
+			// depending on the value of currLabel
+
+			// currLabel = 'e'
+			case 'e':
+				usd = amount * 1.16;
+				break;
+				
+			// currLabel = 'c'
+			case 'c':
+				usd = amount * 0.15;
+				break;
+				
+			// currLabel = 'r'
+			case 'r':
+				usd = amount * 0.015;
+				break;
+				
+			// currLabel = 'b'
+			case 'b':
+				usd = amount * 6923.80;
+				break;
 		}
 		
+		// displays prompt for conversion of currency
 		System.out.println(amount + " " + currency + " in U.S. dollars is: $" + usd);
 		System.out.println();
 		
+		// this is a separate conversion used to find the sum of all digits in a number
+		// displays prompt and asks the user for a number
 		System.out.print("Enter number: ");
 		int firstNum = sc.nextInt();
+		
+		// temp variable used to hold firstNum as it changes
 		int tempNum1 = firstNum;
+		// used to hold the sum of all the digits
 		int sumOfDigits = 0;
 		
+		// continue looping until tempNum1 is less than or equal to 0
 		while (tempNum1 > 0)
 		{
 			int digit1 = tempNum1 % 10;
@@ -103,6 +122,8 @@ public class Conversions {
 		System.out.println("The sum of all the digits in " + firstNum + " is " + sumOfDigits);
 		System.out.println();
 		
+		// this is a separate conversion used to find the reverse of a number
+		// displays prompt and asks the user for a number
 		System.out.print("Enter number: ");
 		int secondNum = sc.nextInt();
 		int tempNum2 = secondNum;

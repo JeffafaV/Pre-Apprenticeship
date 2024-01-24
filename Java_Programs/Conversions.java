@@ -108,17 +108,21 @@ public class Conversions {
 		
 		// temp variable used to hold firstNum as it changes
 		int tempNum1 = firstNum;
-		// used to hold the sum of all the digits
+		// used to hold the sum of all the digits in firstNum
 		int sumOfDigits = 0;
 		
 		// continue looping until tempNum1 is less than or equal to 0
 		while (tempNum1 > 0)
 		{
+			// used to hold the last digit of tempNum1
 			int digit1 = tempNum1 % 10;
+			// add last digit to sumOfDigits
 			sumOfDigits += digit1;
+			// divide tempNum1 by 10 to exclude its last digit
 			tempNum1 /= 10;
 		}
 		
+		// displays prompt for the sum of all digits in a number
 		System.out.println("The sum of all the digits in " + firstNum + " is " + sumOfDigits);
 		System.out.println();
 		
@@ -126,18 +130,28 @@ public class Conversions {
 		// displays prompt and asks the user for a number
 		System.out.print("Enter number: ");
 		int secondNum = sc.nextInt();
+
+		// temp variable used to hold secondNum as it changes
 		int tempNum2 = secondNum;
+		// used to hold the reverse of secondNum
 		int numReversed = 0;
 		
+		// continue looping until tempNum2 is less than or equal to 0
 		while (tempNum2 > 0)
 		{
+			// used to hold the last digit of tempNum2
 			int digit2 = tempNum2 % 10;
+			// multiply 10 to numReversed and then add digit2
+			// multiplying by 10 is what's pushing the last digit to the front
 			numReversed = numReversed * 10 + digit2;
+			// divide tempNum2 by 10 to exclude its last digit
 			tempNum2 /= 10;
 		}
 		
+		// displays prompt for the the reverse of a number
 		System.out.println("The reverse of " + secondNum + " is " + numReversed);
 		
+		// terminates the scanner
 		sc.close();
 	}
 

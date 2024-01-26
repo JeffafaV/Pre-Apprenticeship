@@ -1,22 +1,27 @@
-package com.Jeff.handson;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.ArrayList; // getting ArrayList class from java.time package
+import java.util.Scanner; // getting Scanner class from java.time package
 
+// class used to hold variables belonging to a customer
+// the class has no access modifier giving it default access
+// this means that the class is visible in the same package
 class Customer
 {
-	public int id;
-	public String name;
-	public int age;
-	public String email;
-	public int salary;
+	// public access variables meaning they can be accessed outside of class
+	public int id; // holds id number
+	public String name; // holds customer name
+	public int age; // holds customer age
+	public String email; // holds customer email
+	public int salary; // holds customer salary
 	
+	// default constructor for creating a Customer object
+	// this also has default access meaning it is visible in the same package
 	Customer(int i, String n, int a, String e, int s)
 	{
-		id = i;
-		name = n;
-		age = a;
-		email = e;
-		salary = s;
+		id = i; // set id to i
+		name = n; // set name to n
+		age = a; // set age to a
+		email = e; // set email to e
+		salary = s; // set salary to s
 	}
 }
 
@@ -25,7 +30,10 @@ interface Arr
 	public ArrayList<Customer> arr(ArrayList<Customer> a);
 }
 
-public class HandsOn {
+// file name should be the same as the public class.
+// note that the java virtual machine will load this class 
+// first because it contains the main function
+public class FilteringCollection {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

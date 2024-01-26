@@ -1,5 +1,5 @@
 import java.time.Year; // getting Year class from java.time package
-import java.time.YearMonth; // geeting YearMonth class from java.time package
+import java.time.YearMonth; // getting YearMonth class from java.time package
 import java.util.Scanner; // getting Scanner class from java.util package
 
 // file name should be the same as the public class

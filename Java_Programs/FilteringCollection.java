@@ -35,11 +35,16 @@ interface Arr
 // first because it contains the main function
 public class FilteringCollection {
 
+	// main functiion is the entry point of the program
+	// it needs to have the public and static keywords
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		// creating a scanner object to allow user input
 		Scanner sc = new Scanner(System.in);
 		
+		// creating an empty ArrayList that holds Customer objects
 		ArrayList<Customer> c = new ArrayList<Customer>();
+		// adding customer objects to the ArrayList
 		c.add(new Customer(1,"Jeff",23,"jeff@email.com",5000));
 		c.add(new Customer(2,"Elizabeth",24,"elizabeth@email.com",15000));
 		c.add(new Customer(3,"Dominga",52,"dominga@email.com",1000));

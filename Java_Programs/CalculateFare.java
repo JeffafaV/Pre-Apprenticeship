@@ -1,10 +1,10 @@
-// imporing scanner class from the java.util package
+// importing scanner class from the java.util package
 import java.util.Scanner;
 
 // file name should be the same as the public class
 public class CalculateFare {
 	
-	// main functiion is the entry point of the program
+	// main function is the entry point of the program
 	// it needs to have the public and static keywords
 	public static void main(String[] args) {
 		

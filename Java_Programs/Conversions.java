@@ -101,6 +101,7 @@ public class Conversions {
 		System.out.println(amount + " " + currency + " in U.S. dollars is: $" + usd);
 		System.out.println();
 		
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// this is a separate conversion used to find the sum of all digits in a number
 		// displays prompt and asks the user for a number
 		System.out.print("Enter number: ");
@@ -126,6 +127,7 @@ public class Conversions {
 		System.out.println("The sum of all the digits in " + firstNum + " is " + sumOfDigits);
 		System.out.println();
 		
+		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// this is a separate conversion used to find the reverse of a number
 		// displays prompt and asks the user for a number
 		System.out.print("Enter number: ");

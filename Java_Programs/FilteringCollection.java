@@ -4,8 +4,8 @@ import java.util.Scanner; // getting Scanner class from java.time package
 // class used to hold variables belonging to a customer
 // the class has no access modifier giving it default access
 // this means that the class is visible in the same package
-class Customer
-{
+class Customer {
+
 	// public access variables meaning they can be accessed outside of class
 	public int id; // holds id number
 	public String name; // holds customer name
@@ -15,8 +15,8 @@ class Customer
 	
 	// default constructor for creating a Customer object
 	// this also has default access meaning it is visible in the same package
-	Customer(int i, String n, int a, String e, int s)
-	{
+	Customer(int i, String n, int a, String e, int s) {
+
 		id = i; // set id to i
 		name = n; // set name to n
 		age = a; // set age to a
@@ -25,8 +25,9 @@ class Customer
 	}
 }
 
-interface Arr
-{
+// interface with one method that will be defined in the FilteringCollection class
+interface Arr {
+
 	public ArrayList<Customer> arr(ArrayList<Customer> a);
 }
 
@@ -39,11 +40,9 @@ public class FilteringCollection {
 	// it needs to have the public and static keywords
 	public static void main(String[] args) {
 
-		// creating a scanner object to allow user input
-		Scanner sc = new Scanner(System.in);
-		
 		// creating an empty ArrayList that holds Customer objects
 		ArrayList<Customer> c = new ArrayList<Customer>();
+		
 		// adding customer objects to the ArrayList
 		c.add(new Customer(1,"Jeff",23,"jeff@email.com",5000));
 		c.add(new Customer(2,"Elizabeth",24,"elizabeth@email.com",15000));
@@ -52,35 +51,50 @@ public class FilteringCollection {
 		c.add(new Customer(5,"Denise",28,"denise@email.com",51000));
 		
 		System.out.println("Printing all customers:");
-		for (int i = 0; i < c.size(); i++)
-		{
+
+		// prints the entire ArrayList
+		for (int i = 0; i < c.size(); i++) {
+
+			// notice how we access member variables of objects in an ArrayList
 			System.out.println(c.get(i).name + " $" + c.get(i).salary);
 		}
+
 		System.out.println();
 		
+		// holds a lambda expression
 		Arr rich = (cArr) -> {
+			
+			// creating a new ArrayList
+			// the ArrayList will store all customers with a salary bigger than 50,000
 			ArrayList<Customer> rCust = new ArrayList<Customer>();
 			
-			for (int i = 0; i < cArr.size(); i++)
-			{
-				if (cArr.get(i).salary > 50000)
-				{
+			// loop through entire customer list
+			for (int i = 0; i < cArr.size(); i++) {
+
+				// check to see if current customer has a salary bigger than 50,000
+				if (cArr.get(i).salary > 50000) {
+					
+					// add customer to the new ArrayList
 					rCust.add(cArr.get(i));
 				}
 			}
 			
+			// returning filtered ArrayList
 			return rCust;
 		};
 		
+		// holds the filtered ArrayList
 		ArrayList<Customer> r = rich.arr(c);
 		
 		System.out.println("Printing all customers with a salary over $50,000:");
-		for (int i = 0; i < r.size(); i++)
-		{
+
+		// prints the filtered ArrayList
+		for (int i = 0; i < r.size(); i++) {
+
+			// notice how we access member variables of objects in an ArrayList
 			System.out.println(r.get(i).name + " $" + r.get(i).salary);
 		}
 		
-		sc.close();
 	}
 
 }

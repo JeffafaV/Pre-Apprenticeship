@@ -1,9 +1,12 @@
 import java.util.ArrayList; // getting ArrayList class from java.time package
 import java.util.Scanner; // getting Scanner class from java.time package
 
-// interface with one method that will be defined in the FilteringCollection class
+// interface will be defined in the FilteringCollection class using lambda expressions
+// only interfaces with one method can be used for lambda expressions
 interface FilteringCustomers {
 
+	// method is created but is not defined
+	// we are able to define the method by using lambda expressions
 	public ArrayList<Customer> filter(ArrayList<Customer> a);
 }
 
@@ -30,11 +33,13 @@ class Customer {
 		salary = s; // set salary to s
 	}
 
-	// overriding the toString() method
+	// overriding the toString() method for printing Customer instances/objects
 	public String toString() {
 		return id + " " + name + " " + age + " " + email + " " + salary;
 	}
 
+	// used to return a filtered customer ArrayList depending on which filter we use
+	// fc holds the type of filter and c is the customer ArrayList we are filtering on
 	public static ArrayList<Customer> filter(FilteringCustomers fc, ArrayList<Customer> c) {
 		
 		return fc.filter(c);
@@ -47,7 +52,10 @@ class Customer {
 // first because it contains the main function
 public class Filtering {
 
-	// holds a lambda expression
+	// this variable holds a lambda expression
+	// we are able to define the method in the interface and set it to a variable
+	// customerSalaries, which is an ArrayList<Customer> data type, 
+	// is a parameter that we pass into the method
 	static FilteringCustomers filterBySalary = (customerSalaries) -> {
 		
 		// creating a new ArrayList

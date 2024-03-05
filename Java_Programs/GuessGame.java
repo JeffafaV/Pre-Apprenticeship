@@ -2,10 +2,23 @@ import java.util.Scanner;
 
 public class GuessGame
 {
-    static Scanner sc = new Scanner(System.in);
+    /*
+        just some notes on static and Scanner
+        when creating a static anything, only one instance is created for 
+        the class, meaning no matter how many objects are created there will
+        only be one instace of that thing.
+        the scanner has a close method which frees up the resource. However, 
+        closing that scanner will also close the source. Meaning that if you 
+        close a scanner that has System.in, then you will close System.in and 
+        you won't be able to reopen it with another scanner. Also, you should 
+        only have one scanner per input source. Furthermore, after reading 
+        online it seems that its okay to just not close the scanner for  
+        System.in or you can but do it at the very end of the program.
+    */
+    private static Scanner sc = new Scanner(System.in);
     
-    static void linear() {
-        for (int i = 0; i < 20; i++)
+    void linear() {
+        for (int i = 1; i <= 20; i++)
 	    {
 	        System.out.println("Is your number " + i + "?");
 	        String s = sc.next();
@@ -17,8 +30,8 @@ public class GuessGame
 	    }
     }
     
-    static void binary() {
-        int low = 0;
+    void binary() {
+        int low = 1;
         int high = 20;
         
         while (low <= high) {
@@ -45,9 +58,13 @@ public class GuessGame
     }
     
 	public static void main(String[] args) {
-	    linear();
+	    // insert as argument for both methods
+	    int maxNum;
+	    GuessGame game = new GuessGame();
+	    game.linear();
 	    System.out.println();
 	    System.out.println();
-	    binary();
+	    game.binary();
+	    sc.close();
 	}
 }

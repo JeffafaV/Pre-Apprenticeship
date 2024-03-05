@@ -16,6 +16,10 @@ public class GuessGame
         System.in or you can but do it at the very end of the program.
     */
     private static Scanner sc = new Scanner(System.in);
+
+    // static final means only one instance of the variable no matter how 
+    // many objects are created and the value of that variable can never change
+    private static final int minNum = 5;
     
     void linear() {
         for (int i = 1; i <= 20; i++)

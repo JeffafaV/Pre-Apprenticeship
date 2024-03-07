@@ -19,10 +19,10 @@ public class GuessGame
 
     // static final means only one instance of the variable no matter how 
     // many objects are created and the value of that variable can never change
-    private static final int minNum = 5;
+    private static final int MIN_NUM = 1;
     
-    void linear() {
-        for (int i = 1; i <= 20; i++)
+    void linear(int maxNum) {
+        for (int i = MIN_NUM; i <= maxNum; i++)
 	    {
 	        System.out.println("Is your number " + i + "?");
 	        String s = sc.next();
@@ -34,9 +34,9 @@ public class GuessGame
 	    }
     }
     
-    void binary() {
-        int low = 1;
-        int high = 20;
+    void binary(int high) {
+        int low = MIN_NUM;
+        //int high = 20;
         
         while (low <= high) {
             int mid = low + (high - low) / 2;
@@ -62,13 +62,17 @@ public class GuessGame
     }
     
 	public static void main(String[] args) {
-	    // insert as argument for both methods
+	    // holds the biggest number in the range
 	    int maxNum;
+        maxNum = sc.nextInt();
+
 	    GuessGame game = new GuessGame();
-	    game.linear();
+
+	    game.linear(maxNum);
 	    System.out.println();
 	    System.out.println();
-	    game.binary();
+	    game.binary(maxNum);
+
 	    sc.close();
 	}
 }

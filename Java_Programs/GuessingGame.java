@@ -1,6 +1,7 @@
-import java.util.Scanner;
+import java.util.Scanner; // used for Scanner
 
-public class GuessGame
+// public class name has to be the same as file name
+public class GuessingGame
 {
     /*
         just some notes on static and Scanner
@@ -17,57 +18,80 @@ public class GuessGame
     */
     private static Scanner sc = new Scanner(System.in);
 
-    // static final means only one instance of the variable no matter how 
+    // static final means only one instance of the variable is made no matter how 
     // many objects are created and the value of that variable can never change
-    private static final int MIN_NUM = 1;
+    private static final int MIN_NUM = 1; // is the lower bound of range
     
+    // linear way of guessing
     void linear(int maxNum) {
+        // loop through range
         for (int i = MIN_NUM; i <= maxNum; i++)
 	    {
+            // ask if the current number is your number
 	        System.out.println("Is your number " + i + "?");
 	        String s = sc.next();
 	        
+            // if number is found then print prompt and return
 	        if (s.equals("yes")) {
 	            System.out.println("Found your number");
 	            return;
 	        }
 	    }
+
+        // number not found
+        System.out.println("Number not found");
     }
     
+    // logarithmic way of guessing
     void binary(int high) {
+        // holds the lower change
         int low = MIN_NUM;
-        //int high = 20;
         
+        // loop until low becomes bigger than high
         while (low <= high) {
+            // calculate the middle number of the range
             int mid = low + (high - low) / 2;
             
+            // ask if the current mid number is your number
             System.out.println("Is your number " + mid + "?");
             String s = sc.next();
             
+            // if number is found then print promt and return
             if (s.equals("yes")) {
                 System.out.println("Found your number");
                 return;
             }
             
+            // ask if number is less than or greater than the mid number
             System.out.println("Is your number less than or greater than " + mid + "?");
             s = sc.next();
             
+            // if less, then change range so that we check the lower half
             if (s.equals("less")) {
                 high = mid - 1;
             }
+            // if greater, then change range so that we check the upper half
             else if (s.equals("greater")) {
                 low = mid + 1;
             }
         }
+
+        // number not found
+        System.out.println("Number not found");
     }
     
 	public static void main(String[] args) {
-	    // holds the biggest number in the range
+	    System.out.println("Guessing Game:");
+        
+        // holds the biggest number in the range
 	    int maxNum;
+
+        System.out.print("Insert upper bound of range: ");
         maxNum = sc.nextInt();
 
-	    GuessGame game = new GuessGame();
+	    GuessingGame game = new GuessingGame();
 
+        // guessing the number using the linear and binary approach
 	    game.linear(maxNum);
 	    System.out.println();
 	    System.out.println();

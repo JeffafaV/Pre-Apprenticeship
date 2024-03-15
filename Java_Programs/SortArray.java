@@ -23,6 +23,7 @@ public class SortArray {
 		SortingIDs descendingSort = (ArrayList<Integer> idsArray) -> {
 			
 			// sorts ArrayList in descending order
+			// reverseOrder returns a comparator that changes the sort to descending order
 			Collections.sort(idsArray, Collections.reverseOrder());
 		};
 
